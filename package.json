@@ -1,0 +1,25 @@
+{
+  "name": "dotenv-into-aws-secrets-manager",
+  "version": "0.1.0",
+  "description": "Export .env keys and values into AWS Secrets Manager.",
+  "main": "index.js",
+  "scripts": {
+    "convert": "node index.js",
+    "exportenvintosm": "npm run convert && ./lib/envintosm.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anismerchant/dotenv-into-aws-secrets-manager.git"
+  },
+  "keywords": [
+    "aws secrets manager",
+    "dotenv export into aws secrets manager",
+    "back-end"
+  ],
+  "author": "Anis Merchant",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/anismerchant/dotenv-into-aws-secrets-manager.git/issues"
+  },
+  "homepage": "https://github.com/anismerchant/dotenv-into-aws-secrets-manager.git#readme"
+}
