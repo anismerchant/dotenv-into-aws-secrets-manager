@@ -21,7 +21,7 @@ Create an 'index.js' file and paste the starter code as shown below.
 ```
 const exportDotenvToAwsSecretsManager = require('dotenv-into-aws-secrets-manager');
 
-exportDotenvToAwsSecretsManager('SecretName1', 'Secret Description');
+exportDotenvToAwsSecretsManager('SecretName', 'Secret Description');
 ```
 
 ## Commands
