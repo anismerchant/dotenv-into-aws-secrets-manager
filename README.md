@@ -1,5 +1,3 @@
-# Export Dotenv into AWS Secrets Manager
-
 ## Export .env into AWS Secrets Manager
 
 Export .env keys and values into AWS Secrets Manager with a single command. This assumes you have an AWS account with your credentials stored locally in your root directory i.e. ~/.aws
