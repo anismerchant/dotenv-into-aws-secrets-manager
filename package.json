@@ -21,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/anismerchant/dotenv-into-aws-secrets-manager.git/issues"
   },
-  "homepage": "https://github.com/anismerchant/dotenv-into-aws-secrets-manager.git#readme"
+  "homepage": "https://github.com/anismerchant/dotenv-into-aws-secrets-manager.git#readme",
+  "dependencies": {
+    "shelljs": "^0.8.5"
+  }
 }
