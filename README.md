@@ -24,9 +24,16 @@ const exportDotenvToAwsSecretsManager = require('dotenv-into-aws-secrets-manager
 exportDotenvToAwsSecretsManager('SecretName', 'Secret Description');
 ```
 
+## Example of .env file
+
+```
+API_KEY=MadeUPapikEY
+API_SECRET=madeUPaPisEcRet
+```
+
 ## Commands
 
-Before running the following command, please **place in this directory a '.env' file** that you would like to export into AWS Secrets Manager.
+Before running the following command, please **place in this directory a '.env' file** that you would like to export into AWS Secrets Manager. See illustration directly above.
 
 Run the following command from the root directory:
 
@@ -36,9 +43,16 @@ node index.js
 
 Login to your AWS account and check Secrets Manager.
 
-## Example of .env file
 
-```
-API_KEY=MadeUPapikEY
-API_SECRET=madeUPaPisEcRet
-```
+## Caveats
+
+Once you execute the command, two things will happen:
+
+(1) An **envVariables.json** file with your keys and values will be generated.  
+(2) Your keys and values will be stored inside AWS Secrets Manager in your AWS account.  
+
+**Note: Please be sure to add your generated envVariables.json file in your .gitignore file.**  
+
+## Illustration
+
+<img width="1250" alt="dotenvtosecretsmanager" src="https://user-images.githubusercontent.com/5770541/164470549-6dd52c56-85a9-4038-958b-591fce776278.png">
