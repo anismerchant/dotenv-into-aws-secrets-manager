@@ -19,9 +19,40 @@ npm i dotenv-into-aws-secrets-manager
 Create an 'index.js' file and paste the starter code as shown below.
 
 ```
-const exportDotenvToAwsSecretsManager = require('dotenv-into-aws-secrets-manager');
+const {
+  exportEnvIntoSm,
+  updateEnvInsideSm,
+  getEnvFromSm,
+  deleteEnvFromSm,
+  deleteEnvWithRecoveryWindowFromSm,
+} = require('dotenv-into-aws-secrets-manager');
 
-exportDotenvToAwsSecretsManager('SecretName', 'Secret Description');
+/**
+ * Create keys/values from .env inside AWS Secrets Manager 
+ */
+exportEnvIntoSm('YourSecretName', 'Secret Description');
+
+/**
+ * Update keys/values inside AWS Secrets Manager 
+ */
+updateEnvInsideSm('YourSecretName');
+
+/**
+ * Get keys/values from AWS Secrets Manager 
+ */
+getEnvFromSm('YourSecretName');
+
+/**
+ * Delete keys/values with recovery window inside AWS Secrets Manager
+ * Mininum 7 days 
+ */
+deleteEnvWithRecoveryWindowFromSm('YourSecretName', 7);
+
+/**
+ * Delete keys/values inside AWS Secrets Manager 
+ * No Recovery Window
+ */
+deleteEnvFromSm('YourSecretName');
 ```
 
 ## Example of .env file
