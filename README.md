@@ -43,16 +43,17 @@ updateEnvInsideSm('YourSecretName');
 getEnvFromSm('YourSecretName');
 
 /**
+ * Delete keys/values inside AWS Secrets Manager 
+ * No Recovery Window
+ */
+deleteEnvFromSm('YourSecretName');
+
+/**
  * Delete keys/values with recovery window inside AWS Secrets Manager
  * Mininum 7 days 
  */
 deleteEnvWithRecoveryWindowFromSm('YourSecretName', 7);
 
-/**
- * Delete keys/values inside AWS Secrets Manager 
- * No Recovery Window
- */
-deleteEnvFromSm('YourSecretName');
 ```
 
 ## Example of .env file
