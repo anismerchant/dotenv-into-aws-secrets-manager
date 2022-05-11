@@ -4,77 +4,55 @@ Export .env keys and values into AWS Secrets Manager with a single command. This
 
 ## Installation
 
-Before installing, download and install Node.js.
+This package requires a local installation of Node.js and AWS CLI. Make sure you configure your AWS account with the CLI. [Link to AWS docs](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html)
 
-For brand new projects, be sure to create a package.json first with the `npm init -y`
-
-Next, run the following command in your terminal:
+To install this package in your Node.js project, run the following command:
 
 ```
 npm i dotenv-into-aws-secrets-manager
 ```
 
-## Quick Setup
-
-Create an 'index.js' file and paste the starter code as shown below.
-
-```
-const {
-  exportEnvIntoSm,
-  updateEnvInsideSm,
-  getEnvFromSm,
-  deleteEnvFromSm,
-  deleteEnvWithRecoveryWindowFromSm,
-} = require('dotenv-into-aws-secrets-manager');
-
-/**
- * Create keys/values from .env inside AWS Secrets Manager 
- */
-exportEnvIntoSm('YourSecretName', 'Secret Description');
-
-/**
- * Update keys/values inside AWS Secrets Manager 
- */
-updateEnvInsideSm('YourSecretName');
-
-/**
- * Get keys/values from AWS Secrets Manager 
- */
-getEnvFromSm('YourSecretName');
-
-/**
- * Delete keys/values inside AWS Secrets Manager 
- * No Recovery Window
- */
-deleteEnvFromSm('YourSecretName');
-
-/**
- * Delete keys/values with recovery window inside AWS Secrets Manager
- * Mininum 7 days 
- */
-deleteEnvWithRecoveryWindowFromSm('YourSecretName', 7);
-
-```
-
-## Example of .env file
+## Setup
+Before using the package, please **place in your project root directory a '.env' file** that you would like to export into AWS Secrets Manager. The following is an exmaple of the contents of `.env`:
 
 ```
 API_KEY=MadeUPapikEY
 API_SECRET=madeUPaPisEcRet
 ```
 
-## Commands
-
-Before running the following command, please **place in this directory a '.env' file** that you would like to export into AWS Secrets Manager. See illustration directly above.
-
-Run the following command from the root directory:
-
+Add the following line to `.gitignore`. <b>DO NOT</b> forget this step if you want to keep your environment variables safe.
 ```
-node index.js
+# generated JSON file with environment variables
+envVariables.json
 ```
 
-Login to your AWS account and check Secrets Manager.
+## User Guide
 
+You can use the package directly in your command line to perform CRUD operations on your Secrets.
+
+### Create
+Create a new Secret in your AWS account's Secrets Manager with given secret name and description.
+```
+npx dotenv-into-aws-secrets-manager create YourSecretName "Secret Description"
+```
+
+### Get
+Get key-value pairs stored in your Secret with secret name.
+```
+npx dotenv-into-aws-secrets-manager get YourSecretName
+```
+
+### Update
+Update key-value pairs in your Secret (with the contents of `.env`) with secret name.
+```
+npx dotenv-into-aws-secrets-manager update YourSecretName
+```
+
+### Delete
+Delete a Secret and all of its' contents with secret name.
+```
+npx dotenv-into-aws-secrets-manager delete YourSecretName
+```
 
 ## Caveats
 

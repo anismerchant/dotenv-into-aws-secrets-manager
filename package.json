@@ -24,6 +24,8 @@
   "homepage": "https://github.com/anismerchant/dotenv-into-aws-secrets-manager.git#readme",
   "dependencies": {
     "dotenv-to-json-nodejs": "^1.0.0",
-    "shelljs": "^0.8.5"
-  }
+    "shelljs": "^0.8.5",
+    "yargs": "^17.4.1"
+  },
+  "bin": "cli.js"
 }
