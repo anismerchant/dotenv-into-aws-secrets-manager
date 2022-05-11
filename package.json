@@ -16,7 +16,10 @@
     "dotenv export into aws secrets manager",
     "back-end"
   ],
-  "author": "Anis Merchant",
+  "contributors": [
+    "Anis Merchant",
+    "Freddy Shim"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/anismerchant/dotenv-into-aws-secrets-manager.git/issues"
